@@ -18,6 +18,7 @@ function addBookToLibrary(book) {
 function displayBook(book) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("card-container");
+    newDiv.classList.add(myLibrary.indexOf(book));
     newDiv.innerHTML = `<div class="title-container">
                     <h3 class="book-title">${book.title}</h3>
                 </div>
