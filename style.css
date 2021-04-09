@@ -55,3 +55,22 @@ a {
     color: #4146b1;
     text-decoration: none;
 }
+
+.info-container {
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 1rem;
+}
+
+.book-author,
+.page-number,
+input {
+    grid-column: 2 / 3;
+    text-align: center;
+}
