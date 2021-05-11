@@ -136,3 +136,22 @@ input {
     display: flex;
     justify-content: space-between;
 }
+
+#submitBtn {
+    background-color: #fff;
+    border: 1px solid #000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 1rem;
+    cursor: pointer;
+    color: #000;
+}
+
+#submitBtn:hover {
+    background-color: #fafafa;
+}
+
+.page-number-label {
+    margin-right: 1rem;
+}
