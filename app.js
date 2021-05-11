@@ -1,7 +1,10 @@
 // Variables
 const myLibrary = [];
 const libraryContainer = document.querySelector(".library-container");
-
+const addBookBtn = document.querySelector(".btn-container");
+const submitBtn = document.querySelector("#submitBtn");
+const cardContainer = document.querySelector(".card-container");
+const formContainer = document.querySelector(".form-container");
 // Book Constructor
 function Book(title, author, numOfPages, readBefore) {
     this.title = title;
@@ -9,6 +12,10 @@ function Book(title, author, numOfPages, readBefore) {
     this.numOfPages = numOfPages;
     this.readBefore = readBefore;
 }
+
+// Event Listeners
+addBookBtn.addEventListener("click", handleNewBook);
+submitBtn.addEventListener("click", handleNewBook);
 
 // Handler Functions
 function addBookToLibrary(book) {
@@ -34,3 +41,10 @@ function displayBook(book) {
                 </div>`;
     libraryContainer.appendChild(newDiv);
 }
+
+function handleNewBook(e) {
+    e.preventDefault();
+    formContainer.style.display = "grid";
+}
+
+function handleSubmit(e) {}
