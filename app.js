@@ -37,6 +37,7 @@ function displayBook(book) {
                     <input type="checkbox" name="read" id="read" ${
                         book.readBefore ? 'checked="true"' : "null"
                     } />
+                    <button class="remove-btn">Remove</button>
                 </div>`;
     libraryContainer.appendChild(newDiv);
 }

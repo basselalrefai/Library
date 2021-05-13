@@ -151,3 +151,16 @@ input {
 .page-number-label {
     margin-right: 1rem;
 }
+
+.remove-btn {
+    border: black 1pt solid;
+    border-radius: 15px;
+    background: #fff;
+    font-size: inherit;
+    grid-column: span 2;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: red;
+}
