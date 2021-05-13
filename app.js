@@ -15,7 +15,7 @@ function Book(title, author, numOfPages, readBefore) {
 
 // Event Listeners
 addBookBtn.addEventListener("click", handleNewBook);
-submitBtn.addEventListener("click", handleNewBook);
+submitBtn.addEventListener("click", handleSubmit);
 
 // Handler Functions
 function addBookToLibrary(book) {
@@ -45,6 +45,25 @@ function displayBook(book) {
 function handleNewBook(e) {
     e.preventDefault();
     formContainer.style.display = "grid";
+    libraryContainer.style.display = "none";
+    addBookBtn.style.display = "none";
 }
 
-function handleSubmit(e) {}
+function handleSubmit(e) {
+    e.preventDefault();
+    addBookToLibrary(
+        new Book(
+            e.target.parentNode[0].value,
+            e.target.parentNode[1].value,
+            e.target.parentNode[2].value,
+            e.target.parentNode[3].checked
+        )
+    );
+
+    displayBook(myLibrary[myLibrary.length - 1]);
+    formContainer.style.display = "none";
+    libraryContainer.style.display = "grid";
+    addBookBtn.style.display = "flex";
+}
+
+formContainer.style.display = "none";
