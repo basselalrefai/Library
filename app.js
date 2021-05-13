@@ -5,6 +5,8 @@ const addBookBtn = document.querySelector(".btn-container");
 const submitBtn = document.querySelector("#submitBtn");
 const formContainer = document.querySelector(".form-container");
 let removeBtn;
+let readChekbox;
+
 // Book Constructor
 function Book(title, author, numOfPages, readBefore) {
     this.title = title;
@@ -43,6 +45,10 @@ function displayBook(book) {
     libraryContainer.appendChild(newDiv);
     removeBtn = Array.from(document.querySelectorAll(".remove-btn"));
     removeBtn.forEach((btn) => btn.addEventListener("click", handleRemove));
+    readChekbox = Array.from(document.querySelectorAll("#read"));
+    readChekbox.forEach((checkBox) =>
+        checkBox.addEventListener("click", handleRead)
+    );
 }
 
 function handleNewBook(e) {
@@ -71,8 +77,20 @@ function handleSubmit(e) {
 
 function handleRemove(e) {
     e.preventDefault();
-    const indexString = e.target.parentElement.parentElement.classList[1];
-    const index = indexString.split("-");
-    delete myLibrary[index[1]];
+    const indexString =
+        e.target.parentElement.parentElement.classList[1].split("-");
+    const index = indexString[1];
+    delete myLibrary[index];
     e.target.parentElement.parentElement.style.display = "none";
+}
+
+function handleRead(e) {
+    const indexString =
+        e.target.parentElement.parentElement.classList[1].split("-");
+    const index = indexString[1];
+    if (e.target.checked) {
+        myLibrary[index].readBefore = true;
+    } else {
+        myLibrary[index].readBefore = false;
+    }
 }
