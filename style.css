@@ -97,10 +97,6 @@ input {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.card-container {
-    display: none;
-}
-
 .form-div-container {
     position: absolute;
     display: flex;
