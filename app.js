@@ -4,6 +4,7 @@ const libraryContainer = document.querySelector(".library-container");
 const addBookBtn = document.querySelector(".btn-container");
 const submitBtn = document.querySelector("#submitBtn");
 const formContainer = document.querySelector(".form-container");
+let removeBtn;
 // Book Constructor
 function Book(title, author, numOfPages, readBefore) {
     this.title = title;
@@ -40,6 +41,8 @@ function displayBook(book) {
                     <button class="remove-btn">Remove</button>
                 </div>`;
     libraryContainer.appendChild(newDiv);
+    removeBtn = Array.from(document.querySelectorAll(".remove-btn"));
+    removeBtn.forEach((btn) => btn.addEventListener("click", handleRemove));
 }
 
 function handleNewBook(e) {
@@ -64,4 +67,12 @@ function handleSubmit(e) {
     formContainer.style.display = "none";
     libraryContainer.style.display = "grid";
     addBookBtn.style.display = "flex";
+}
+
+function handleRemove(e) {
+    e.preventDefault();
+    const indexString = e.target.parentElement.parentElement.classList[1];
+    const index = indexString.split("-");
+    delete myLibrary[index[1]];
+    e.target.parentElement.parentElement.style.display = "none";
 }
