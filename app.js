@@ -64,5 +64,3 @@ function handleSubmit(e) {
     libraryContainer.style.display = "grid";
     addBookBtn.style.display = "flex";
 }
-
-formContainer.style.display = "none";
