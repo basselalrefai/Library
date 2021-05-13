@@ -3,7 +3,6 @@ const myLibrary = [];
 const libraryContainer = document.querySelector(".library-container");
 const addBookBtn = document.querySelector(".btn-container");
 const submitBtn = document.querySelector("#submitBtn");
-const cardContainer = document.querySelector(".card-container");
 const formContainer = document.querySelector(".form-container");
 // Book Constructor
 function Book(title, author, numOfPages, readBefore) {
