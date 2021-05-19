@@ -7,12 +7,14 @@ const formContainer = document.querySelector(".form-container");
 let removeBtn;
 let readChekbox;
 
-// Book Constructor
-function Book(title, author, numOfPages, readBefore) {
-    this.title = title;
-    this.author = author;
-    this.numOfPages = numOfPages;
-    this.readBefore = readBefore;
+// Book Class
+class Book {
+    constructor(title, author, numOfPages, readBefore) {
+        this.title = title;
+        this.author = author;
+        this.numOfPages = numOfPages;
+        this.readBefore = readBefore;
+    }
 }
 
 // Event Listeners
